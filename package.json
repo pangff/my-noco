@@ -1,0 +1,29 @@
+{
+  "name": "my-noco-app",
+  "private": true,
+  "workspaces": [
+    "packages/*/*"
+  ],
+  "scripts": {
+    "nocobase": "nocobase",
+    "dev": "nocobase dev",
+    "start": "nocobase start",
+    "clean": "nocobase clean",
+    "build": "nocobase build",
+    "test": "nocobase test",
+    "postinstall": "nocobase postinstall",
+    "lint": "eslint ."
+  },
+  "resolutions": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0"
+  },
+  "dependencies": {
+    "@nocobase/cli": "0.7.4-alpha.4",
+    "sqlite3": "^5.0.8",
+    "supertest": "^6.2.4"
+  },
+  "devDependencies": {
+    "@nocobase/devtools": "0.7.4-alpha.4"
+  }
+}
