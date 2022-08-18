@@ -1,7 +1,7 @@
 /*
  * @Author: pangff
  * @Date: 2022-08-15 10:23:06
- * @LastEditTime: 2022-08-15 21:36:58
+ * @LastEditTime: 2022-08-16 08:30:34
  * @LastEditors: pangff
  * @Description: 
  * @FilePath: /my-noco-app/packages/plugins/my-plugin/src/__tests__/order-hook.test.ts
@@ -95,6 +95,16 @@ describe("collections test", () => {
         news = response.body.data;
         expect(news.readers.length).toEqual(0);
         expect(news.content).toEqual('admin');
+
+
+         //list查询
+         response = await request(app)
+         .get(`/api/news:list?pageSize=5`)
+         .set("Authorization", `Bearer ${admin.token}`)
+         .send();
+        expect(response.statusCode).toEqual(200);
+        let list = response.body.data;
+        console.log(list)
     });
 
 });
